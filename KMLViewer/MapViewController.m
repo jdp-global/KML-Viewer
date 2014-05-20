@@ -116,6 +116,11 @@
     if (url) {
         [self loadKMLAtURL:url];
     }
+	else {
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"KML_Samples" ofType:@"kml"];
+		NSURL *url = [NSURL fileURLWithPath:path];
+		[self loadKMLAtURL:url];
+	}
 }
 
 - (void)viewWillAppear:(BOOL)animated
